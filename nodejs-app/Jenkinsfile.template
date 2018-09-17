@@ -4,6 +4,8 @@ pipeline {
    
     buildDiscarder(logRotator(numToKeepStr: '2'))
     skipDefaultCheckout true
+     preserveStashes(buildCount: 2)
+
    }
    post {
     aborted {
