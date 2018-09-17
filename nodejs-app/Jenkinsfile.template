@@ -38,8 +38,7 @@ pipeline {
       }
       input {
         message "Should we deploy?"
-        submitter "jhendrick1"
-        submitterParameter "APPROVER"
+      
       }
       steps {
         echo "Continuing with deployment - approved by ${APPROVER}"
