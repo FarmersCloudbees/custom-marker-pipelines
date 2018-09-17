@@ -1,11 +1,12 @@
 pipeline {
-   agent { label 'nodejs-app' }
+   agent none
    options { 
     buildDiscarder(logRotator(numToKeepStr: '2'))
   }
    stages {
       stage('Say Hello') {
          steps {
+           sh 'java -version'
            container('nodejs') {
             echo 'Hello World!'   
             sh 'node --version'
@@ -19,7 +20,7 @@ pipeline {
          }
          steps {
             echo "TODO - build and push image"
-         }
+            sh 'java -version}
       }
    }
 }
